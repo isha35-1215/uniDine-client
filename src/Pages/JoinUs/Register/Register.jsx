@@ -1,4 +1,4 @@
-import { Link, Navigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import swal from "sweetalert";
 import { AuthContext } from "../../Providers/AuthProvider/AuthProvider";
 import { useContext } from "react";
@@ -13,7 +13,7 @@ const Register = () => {
     } = useForm();
 
     const { createUser, updateUserProfile, logOut } = useContext(AuthContext);
-
+    const navigate = useNavigate();
     
     const onSubmit = (data) => {
         console.log(data);
@@ -27,7 +27,7 @@ const Register = () => {
                     })
             swal("Congrats!!", "You are successfully registered!", "success");
             logOut();
-            Navigate('/login');
+            navigate('/login');
         })
         .catch(error => {
             console.error(error)

@@ -1,5 +1,4 @@
 import { Link, NavLink } from "react-router-dom";
-import { FaUserCircle } from "react-icons/fa";
 import { MdDarkMode, MdNotificationsActive } from "react-icons/md";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProvider/AuthProvider";

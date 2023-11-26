@@ -54,7 +54,7 @@ const MenuCards = ({ items }) => {
                     })}
                 </div>
                 <div className="card-actions">
-                    <Link to={`/meals/${items.id}`} onClick={handleViewDetails}>
+                    <Link to={`/meals/${items._id}`} onClick={handleViewDetails}>
                         <button className="btn btn-warning w-80 text-base text-white bg-orange-500 border-orange-400 normal-case">View Details</button>
                     </Link>
                 </div>
