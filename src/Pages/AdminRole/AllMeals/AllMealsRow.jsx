@@ -37,8 +37,9 @@ const AllMealsRow = ({ item, refetch }) => {
         const rating = form.rating.value;
         const category = form.category.value;
         const time = form.time.value;
+        const img = form.img.value;
 
-        const edited = { price,ingredients,admin, description,rating, category,time };
+        const edited = { price,ingredients,admin, img, description,rating, category,time };
         console.log(edited);
 
         fetch(`http://localhost:5000/upmeals/${_id}`, {

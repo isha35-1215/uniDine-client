@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import swal from "sweetalert";
 
 const UpcomingRow = ({ item }) => {
-    const { _id, title, img, time, like, review, category, description, ingredients, admin, email, rating } = item;
+    const { _id, title, img, time, like, review, category, price, description, ingredients, admin, email, rating } = item;
 
-    const mealInfo = { title, img, time, like, review, category, description, ingredients, admin, email, rating };
+    const mealInfo = { title, img, time, like, review, category, price, description, ingredients, admin, email, rating };
 
     const [isPosted, setIsPosted] = useState(false);
 
