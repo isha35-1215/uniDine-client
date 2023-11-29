@@ -40,8 +40,8 @@ const Menu = () => {
 
     return (
         <div>
-            <h1 className='text-center text-3xl lg:text-4xl font-bold text-orange-600 mt-4'>Your Daily Delights</h1>
-            <h6 className="text-center text-lg lg:text-xl text-orange-500 m-4">Choose Your Culinary Adventure</h6>
+            <h1 className='text-center text-3xl lg:text-4xl font-bold  mt-4'>Your Daily Delights</h1>
+            <h6 className="text-center text-lg lg:text-xl  m-4">Choose Your Culinary Adventure</h6>
             <Tabs>
                 <TabList className='text-center border-b-2 border-b-orange-500'>
                     <Tab>All Meals</Tab>

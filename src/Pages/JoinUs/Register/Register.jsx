@@ -4,34 +4,50 @@ import { AuthContext } from "../../Providers/AuthProvider/AuthProvider";
 import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { Helmet } from "react-helmet-async";
+import useAxiosPublic from "../../../hooks/useAxiosPublic";
+import Swal from "sweetalert2";
 
 const Register = () => {
+    const axiosPublic = useAxiosPublic();
     const {
         register,
         handleSubmit,
+        reset,
         formState: { errors },
     } = useForm();
 
-    const { createUser, updateUserProfile, logOut } = useContext(AuthContext);
+    const { createUser, updateUserProfile } = useContext(AuthContext);
     const navigate = useNavigate();
-    
+
     const onSubmit = (data) => {
         console.log(data);
         createUser(data.Email, data.Password)
-        .then(result => {
-            console.log(result.user);
-            updateUserProfile(data.Name, data.Photo)
-                    .then(() => console.log("updated"))
+            .then(result => {
+                console.log(result.user);
+                updateUserProfile(data.Name, data.Photo)
+                    .then(() => {
+                        // console.log("updated")
+                        const userInfo = {
+                            name: data.Name,
+                            email: data.Email
+                            
+                        }
+                        axiosPublic.post('/users', userInfo)
+                            .then(res => {
+                                if (res.data.insertedId) {
+                                    console.log('user added to the database')
+                                    reset();
+                                    swal("Congrats!!", "User Added Successfully!", "success");
+                                    navigate('/');
+                                }
+                            })
+                    })
                     .catch(error => {
                         console.error(error)
                     })
-            swal("Congrats!!", "You are successfully registered!", "success");
-            logOut();
-            navigate('/login');
-        })
-        .catch(error => {
-            console.error(error)
-        })
+                // swal("Congrats!!", "You are successfully registered!", "success");
+                // navigate('/');
+            })
 
     }
 

@@ -35,6 +35,8 @@ const Meals = () => {
         setCards(filteredData);
     }, [searchInput, selectedCategory, selectedPriceRange, menu]);
 
+    
+
     return (
         <div>
             <Helmet>

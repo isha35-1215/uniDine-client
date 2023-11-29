@@ -31,6 +31,10 @@ const Navbar = () => {
             isPending ? "pending" : isActive ?
                 "text-orange-600 text-base font-bold underline" : ""
         }>Meals</NavLink></li>
+        <li><NavLink to="/upcomingMeal" className={({ isActive, isPending }) =>
+            isPending ? "pending" : isActive ?
+                "text-orange-600 text-base font-bold underline" : ""
+        }>Upcoming Meals</NavLink></li>
 
         <li>{user ?
             <button onClick={handleSignOut} className={({ isActive, isPending }) =>
@@ -77,7 +81,7 @@ const Navbar = () => {
                         <label tabIndex={0}><img className='rounded-full w-12 h-12 ' src={user?.photoURL} alt="" /></label>
                         <ul tabIndex={0} className="dropdown-content z-[1] menu shadow bg-base-100 rounded-box w-52">
                             <li className="pl-4">{user?.displayName}</li>
-                            <li><a>Item 2</a></li>
+                            <li><NavLink to={'/dashboard'}>Dashboard</NavLink></li>
                         </ul>
                     </div>}
 

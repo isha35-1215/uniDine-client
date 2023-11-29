@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Silver",
+        "img": "https://i.ibb.co/PjJzxNb/premium-9471709.png",
+        "price": "100"
+    },
+    {
+        "name": "Gold",
+        "img": "https://i.ibb.co/P4GRPHc/food-12652081.png",
+        "price": "200"
+    },
+    {
+        "name": "Platinum",
+        "img": "https://i.ibb.co/GR1L0pG/platinum-5619865.png",
+        "price": "260"
+    }
+]

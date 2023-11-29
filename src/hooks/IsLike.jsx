@@ -2,23 +2,20 @@ import { useQuery } from "@tanstack/react-query";
 import { useContext } from "react";
 import { AuthContext } from "../Pages/Providers/AuthProvider/AuthProvider";
 import useAxiosSecure from "./useAxiosSecure";
-import { useParams } from "react-router-dom";
 
-const useLike = () => {
-    const {id}= useParams();
-
-    console.log(id);
+const IsLike = () => {
+    
     const axiosSecure = useAxiosSecure();
     const { user} = useContext(AuthContext);
-    const { refetch, data: like = [] } = useQuery({
+    const { refetch, data: isLiked = [] } = useQuery({
         queryKey: ['like', user?.email],
         queryFn: async() => {
-            const res = await axiosSecure.get(`/likes?email=${user?.email}&id=${id}`);
+            const res = await axiosSecure.get(`/samelikes?email=${user?.email}`);
             return res.data;
         }
     })
 
-    return [like, refetch]
+    return [isLiked, refetch]
 };
 
-export default useLike;
+export default IsLike;
