@@ -22,7 +22,7 @@ const ManageUsers = () => {
         setCurrentPage(newPage);
     };
 
-    // const [searchInput, setInput] = useState('');
+    // const [searchInput, setSearchInput] = useState('');
 
     // useEffect(() => {
     //     // Filter by search input
@@ -40,9 +40,9 @@ const ManageUsers = () => {
     //         .catch((error) => console.error("Error fetching isOne data:", error));
 
     //     setCards(filteredData);
-    // }, [searchInput, users]);
+    // }, []);
 
-    // console.log(cards);
+    // console.log(searchInput);
 
     return (
         <div>
@@ -53,7 +53,7 @@ const ManageUsers = () => {
                     placeholder="Search by email and name..."
                     className="input input-bordered border-orange-500 rounded-r-none"
                 // value={searchInput}
-                // onChange={(e) => setInput(e.target.value)}
+                // onChange={(e) => setSearchInput(e.target.value)}
                 />
                 <button className="btn btn-secondary bg-orange-500 rounded-l-none">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">

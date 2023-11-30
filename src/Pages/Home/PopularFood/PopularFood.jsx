@@ -6,8 +6,8 @@ const PopularFood = () => {
             <h1 className=' text-center text-3xl lg:text-4xl font-bold  mt-4'>Our Popular Items</h1>
             <h6 className="text-center text-lg lg:text-xl m-4">Explore The Charm of Our Most Loved Dishes!</h6>
             <div className="grid grid-cols-1 md:grid-cols-3 mx-auto gap-12 my-10 px-12 md:px-20 lg:px-24">
-                <div className="card w-96 bg-base-100 shadow-xl">
-                    <figure className="px-10 pt-10">
+                <div className="card card-compact  h-[390px] md:h-[250px] lg:h-[390px] bg-base-100 shadow-xl border-orange-500 border-[1px]">
+                    <figure className="px-4 pt-6">
                         <img src="https://i.ibb.co/LnBXHB5/authentic-italian-pasta.jpg" className="rounded-xl" />
                     </figure>
                     <div className="card-body items-center text-center">
@@ -20,8 +20,8 @@ const PopularFood = () => {
                         </div>
                     </div>
                 </div>
-                <div className="card w-96 bg-base-100 shadow-xl">
-                    <figure className="px-10 pt-10">
+                <div className="card card-compact  h-[390px] md:h-[250px] lg:h-[390px] bg-base-100 shadow-xl border-orange-500 border-[1px]">
+                    <figure className="px-4 pt-6">
                         <img src="https://i.ibb.co/RPK6pJs/fresh-sandwich-cutting-board-with-healthy-tomatoes-generative-ai.jpg" className="rounded-xl" />
                     </figure>
                     <div className="card-body items-center text-center">
@@ -34,8 +34,8 @@ const PopularFood = () => {
                         </div>
                     </div>
                 </div>
-                <div className="card w-96 bg-base-100 shadow-xl">
-                    <figure className="px-10 pt-10">
+                <div className="card card-compact  h-[390px] md:h-[250px] lg:h-[390px] bg-base-100 shadow-xl border-orange-500 border-[1px]">
+                    <figure className="px-4 pt-6">
                         <img src="https://i.ibb.co/1TZxmr3/turkish-breakfast-shakshuka-olives-cheese-fruit-rich-brunch.jpg" className="rounded-xl" />
                     </figure>
                     <div className="card-body items-center text-center">
