@@ -3,13 +3,18 @@ import { AuthContext } from "../../Providers/AuthProvider/AuthProvider";
 
 const MyProfile = () => {
 
-    const { user } = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
+    const handleSignOut = () => {
+        logOut()
+            .then()
+            .catch()
+    }
 
     const [isMember, setIsMember] = useState([]);
     console.log(isMember);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/payments?email=${user?.email}`)
+        fetch(`https://uni-dine-server.vercel.app/payments?email=${user?.email}`)
             .then((res) => res.json())
             .then((data) => setIsMember(data));
     }, []);
@@ -35,6 +40,7 @@ const MyProfile = () => {
                             <p className="pt-6 text-xl  font-semibold">User Email:</p>
                             <p className="text-2xl font-extrabold">{user?.email}</p>
                         </div>
+
                     </div>
                 </div>
                 <div>
@@ -55,7 +61,12 @@ const MyProfile = () => {
                         </div>
                     </div>
                 </div>
+
             </div>
+<div className="flex flex-row justify-center">
+<button onClick={handleSignOut} className='mt-6  btn btn-warning text-white text-lg bg-orange-500  normal-case'>Sign Out</button>
+
+</div>
         </div>
     );
 };

@@ -51,9 +51,9 @@ const Menu = () => {
                 </TabList>
 
                 <TabPanel>
-                {renderMenuCards(currentItems)}
+                    {renderMenuCards(currentItems)}
                     <div className="flex justify-center">
-                    <GrFormPreviousLink
+                        <GrFormPreviousLink
                             className={`text-2xl ${currentPage === 1 ? 'text-gray-300 cursor-not-allowed' : 'text-orange-500 cursor-pointer'}`}
                             onClick={() => handlePageChange(currentPage - 1)}
                             style={{ pointerEvents: currentPage === 1 ? 'none' : 'auto' }}

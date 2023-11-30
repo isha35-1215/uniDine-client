@@ -40,19 +40,19 @@ const router = createBrowserRouter([
         {
             path: '/meal/:id',
             element: <MealsDetails></MealsDetails>,
-            loader: ({params}) => fetch(`http://localhost:5000/mealDetails/${params.id}`)
+            loader: ({params}) => fetch(`https://uni-dine-server.vercel.app/mealDetails/${params.id}`)
 
         },
         {
             path: '/checkout/:name',
             element: <PrivateRoute><Checkout></Checkout></PrivateRoute>,
-            loader: ({params}) => fetch(`http://localhost:5000/checkout/${params.name}`)
+            loader: ({params}) => fetch(`https://uni-dine-server.vercel.app/checkout/${params.name}`)
 
         },
         {
             path: '/upcomingMeal',
-            element: <IsUpcoming></IsUpcoming>,
-            loader: ({params}) => fetch(`http://localhost:5000/upcomings/${params.id}`)
+            element: <IsUpcoming></IsUpcoming>
+            // loader: ({params}) => fetch(`https://uni-dine-server.vercel.app/upcomings/${params.id}`)
 
 
         },

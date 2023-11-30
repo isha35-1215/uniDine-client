@@ -19,7 +19,7 @@ const MealsDetails = () => {
 
     //fetch reviews
     const fetchAllReviews = () => {
-        fetch(`http://localhost:5000/reviews/${_id}`)
+        fetch(`https://uni-dine-server.vercel.app/reviews/${_id}`)
             .then((res) => res.json())
             .then((data) => setAllReviews(data));
     };
@@ -32,7 +32,7 @@ const MealsDetails = () => {
         const email = form.email.value;
         const reviewData = { mealID: _id, title, review, email };
 
-        fetch("http://localhost:5000/reviews", {
+        fetch("https://uni-dine-server.vercel.app/reviews", {
             method: "POST",
             headers: {
                 "content-type": "application/json",
@@ -59,7 +59,7 @@ const MealsDetails = () => {
     console.log(allReviews);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews/${_id}`)
+        fetch(`https://uni-dine-server.vercel.app/reviews/${_id}`)
             .then((res) => res.json())
             .then((data) => setAllReviews(data));
     }, [_id]);
@@ -72,7 +72,7 @@ const MealsDetails = () => {
     const [liked, setLiked] = useState(false);
 
     const fetchAllLikes = () => {
-        fetch(`http://localhost:5000/likes/${_id}`)
+        fetch(`https://uni-dine-server.vercel.app/likes/${_id}`)
             .then((res) => res.json())
             .then((data) => setAllLikes(data));
     };
@@ -82,7 +82,7 @@ const MealsDetails = () => {
         if (user) {
             setLiked(true);
             const likedData = { mealID: _id, title, liked: true, email: email };
-            fetch("http://localhost:5000/likes", {
+            fetch("https://uni-dine-server.vercel.app/likes", {
                 method: "POST",
                 headers: {
                     "content-type": "application/json",
@@ -110,7 +110,7 @@ const MealsDetails = () => {
     console.log(allLikes);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/likes/${_id}`)
+        fetch(`https://uni-dine-server.vercel.app/likes/${_id}`)
             .then((res) => res.json())
             .then((data) => setAllLikes(data));
     }, [_id]);
@@ -121,7 +121,7 @@ const MealsDetails = () => {
     const [isMember, setIsMember] = useState(null);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/payment?email=${email}`)
+        fetch(`https://uni-dine-server.vercel.app/payment?email=${email}`)
             .then((res) => res.json())
             .then((data) => setIsMember(data));
     }, [email]);
@@ -141,7 +141,7 @@ const MealsDetails = () => {
             swal("You aren't package holder", "Purchase package to eat!", "error");
         }
         else {
-            fetch("http://localhost:5000/orders", {
+            fetch("https://uni-dine-server.vercel.app/orders", {
                 method: "POST",
                 headers: {
                     "content-type": "application/json",

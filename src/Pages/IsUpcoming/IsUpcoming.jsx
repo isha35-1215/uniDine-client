@@ -7,7 +7,7 @@ const IsUpcoming = () => {
     console.log(allNew);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/upcomings`)
+        fetch(`https://uni-dine-server.vercel.app/upcomings`)
             .then((res) => res.json())
             .then((data) => setAllNew(data));
     }, []);

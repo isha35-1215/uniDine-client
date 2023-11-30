@@ -5,7 +5,7 @@ const Membership = () => {
     const [membership, setMembership] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/membership')
+        fetch('https://uni-dine-server.vercel.app/membership')
             .then(res => res.json())
             .then(data => {
                 setMembership(data);

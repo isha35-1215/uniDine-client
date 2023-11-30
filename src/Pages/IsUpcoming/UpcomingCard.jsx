@@ -30,7 +30,7 @@ const UpcomingCard = ({ items }) => {
             setLiked(true);
             
             const likedData = { mealID: _id, title, liked: true, email: email };
-            fetch("http://localhost:5000/likes", {
+            fetch("https://uni-dine-server.vercel.app/likes", {
                 method: "POST",
                 headers: {
                     "content-type": "application/json",
@@ -52,7 +52,7 @@ const UpcomingCard = ({ items }) => {
     // console.log(userLikes);
 
     // useEffect(() => {
-    //     fetch(`http://localhost:5000/samelikes?email=${user?.email}`)
+    //     fetch(`https://uni-dine-server.vercel.app/samelikes?email=${user?.email}`)
     //         .then((res) => res.json())
     //         .then((data) => setUserLikes(data));
     // }, []);

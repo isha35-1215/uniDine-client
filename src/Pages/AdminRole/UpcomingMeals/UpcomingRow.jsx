@@ -10,7 +10,7 @@ const UpcomingRow = ({ item }) => {
 
     const handlePost = () => {
         setIsPosted(true);
-        fetch("http://localhost:5000/meals", {
+        fetch("https://uni-dine-server.vercel.app/meals", {
             method: "POST",
             headers: {
                 "content-type": "application/json",
@@ -24,7 +24,7 @@ const UpcomingRow = ({ item }) => {
     const [allLikes, setAllLikes] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/likes/${_id}`)
+        fetch(`https://uni-dine-server.vercel.app/likes/${_id}`)
             .then((res) => res.json())
             .then((data) => setAllLikes(data));
     }, [_id]);
@@ -36,7 +36,7 @@ const UpcomingRow = ({ item }) => {
     // console.log(userLikes);
 
     // useEffect(() => {
-    //     fetch(`http://localhost:5000/likeCount?mealID=${_id}`)
+    //     fetch(`https://uni-dine-server.vercel.app/likeCount?mealID=${_id}`)
     //         .then((res) => res.json())
     //         .then((data) => setUserLikes(data));
     // }, []);

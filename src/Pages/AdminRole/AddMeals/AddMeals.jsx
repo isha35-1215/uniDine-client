@@ -26,7 +26,7 @@ const AddMeals = () => {
             email: data.email
         }
 
-        fetch("http://localhost:5000/meals", {
+        fetch("https://uni-dine-server.vercel.app/meals", {
             method: "POST",
             headers: {
                 "content-type": "application/json",
@@ -56,7 +56,7 @@ const AddMeals = () => {
             email: data.email
         }
 
-        fetch("http://localhost:5000/upcomings", {
+        fetch("https://uni-dine-server.vercel.app/upcomings", {
             method: "POST",
             headers: {
                 "content-type": "application/json",

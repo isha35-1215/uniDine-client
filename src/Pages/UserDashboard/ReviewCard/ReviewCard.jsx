@@ -10,7 +10,7 @@ const ReviewCard = ({ item, refetch }) => {
     const [allLikes, setAllLikes] = useState([]);
     console.log(allLikes);
     useEffect(() => {
-        fetch(`http://localhost:5000/likes/${mealID}`)
+        fetch(`https://uni-dine-server.vercel.app/likes/${mealID}`)
             .then((res) => res.json())
             .then((data) => setAllLikes(data));
     }, [mealID]);
@@ -25,7 +25,7 @@ const ReviewCard = ({ item, refetch }) => {
         const edited = { review };
         console.log(edited);
 
-        fetch(`http://localhost:5000/reviews/${_id}`, {
+        fetch(`https://uni-dine-server.vercel.app/reviews/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -45,7 +45,7 @@ const ReviewCard = ({ item, refetch }) => {
 
 
     const handleDelete  =()=> {
-        console.log('called', `http://localhost:5000/delete/${_id}`);
+        console.log('called', `https://uni-dine-server.vercel.app/delete/${_id}`);
 
         Swal.fire({
             title: 'Are you sure?',
@@ -57,7 +57,7 @@ const ReviewCard = ({ item, refetch }) => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/delete/${_id}`, {
+                fetch(`https://uni-dine-server.vercel.app/delete/${_id}`, {
                     method: "DELETE",
                 })
                     .then(res => res.json())

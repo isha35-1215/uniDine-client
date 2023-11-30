@@ -5,7 +5,7 @@ const ManageRow = ({ user, refetch }) => {
     const [isMember, setIsMember] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/payments?email=${user.email}`)
+        fetch(`https://uni-dine-server.vercel.app/payments?email=${user.email}`)
             .then((res) => res.json())
             .then((data) => setIsMember(data));
     }, [user.email]);
@@ -25,7 +25,7 @@ const ManageRow = ({ user, refetch }) => {
             confirmButtonText: 'Yes!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/users/admin/${user._id}`, {
+                fetch(`https://uni-dine-server.vercel.app/users/admin/${user._id}`, {
                     method: "PATCH",
                 }).then(res => res.json())
                     .then(data => {
@@ -46,8 +46,20 @@ const ManageRow = ({ user, refetch }) => {
 
     }
 
-
     
+    // const [isOne, setIsOne] = useState([]);
+
+    // useEffect(() => {
+    //     fetch(`https://uni-dine-server.vercel.app/isOne?email=${user.email}&name=${user.name}`)
+    //         .then((res) => res.json())
+    //         .then((data) => setIsOne(data));
+    // }, [user.email, user.name]);
+
+
+
+
+
+
 
     return (
         <tr className="grid grid-cols-4">

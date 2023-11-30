@@ -5,10 +5,22 @@ import { Helmet } from "react-helmet-async";
 
 const Meals = () => {
     const [menu] = useMenu();
+
+    // const [menu, setMenu] = useState([]);
+    // console.log(menu);
+
+    // useEffect(() => {
+    //     fetch(`https://uni-dine-server.vercel.app/meals`)
+    //         .then((res) => res.json())
+    //         .then((data) => setMenu(data));
+    // }, []);
+
     const [searchInput, setSearchInput] = useState('');
     const [selectedCategory, setSelectedCategory] = useState('');
     const [selectedPriceRange, setSelectedPriceRange] = useState('');
     const [cards, setCards] = useState([]);
+
+    
 
     useEffect(() => {
         // Filter by search input
@@ -35,6 +47,81 @@ const Meals = () => {
         setCards(filteredData);
     }, [searchInput, selectedCategory, selectedPriceRange, menu]);
 
+
+
+    // const [currentPage, setCurrentPage] = useState(1);
+    // const [loading, setLoading] = useState(false);
+    // const [hasMore, setHasMore] = useState(true);
+    // const observer = useRef();
+
+    // useEffect(() => {
+    //     // Cleanup observer on component unmount
+    //     return () => {
+    //         if (observer.current) {
+    //             observer.current.disconnect();
+    //         }
+    //     };
+    // }, []);
+
+    // useEffect(() => {
+    //     const options = {
+    //         root: null,
+    //         rootMargin: '0px',
+    //         threshold: 0.1,
+    //     };
+
+    //     // Create an intersection observer to observe when the last card comes into view
+    //     observer.current = new IntersectionObserver(
+    //         (entries) => {
+    //             if (entries[0].isIntersecting && hasMore && !loading) {
+    //                 loadMoreData();
+    //             }
+    //         },
+    //         options
+    //     );
+
+    //     if (cards && cards.length > 0) {
+    //         observer.current.observe(document.getElementById(`card-${cards.length - 1}`));
+    //     }
+    // }, [cards, hasMore, loading]);
+
+    // const loadMoreData = () => {
+    //     setLoading(true);
+    //     setCurrentPage((prevPage) => prevPage + 1);
+
+    //     // Fetch data for the next page
+    //     fetch(`https://uni-dine-server.vercel.app/allmeals?page=${currentPage + 1}`)
+    //         .then((res) => res.json())
+    //         .then((data) => {
+    //             if (data.length === 0) {
+    //                 setHasMore(false);
+    //             } else {
+    //                 setCards((prevCards) => [...prevCards, ...data]);
+    //             }
+    //             setLoading(false);
+    //         })
+    //         .catch((error) => {
+    //             console.error('Error fetching data:', error);
+    //             setLoading(false);
+    //         });
+    // };
+
+    // useEffect(() => {
+    //     fetch('https://uni-dine-server.vercel.app/allmeals?page=1')
+    //         .then((res) => res.json())
+    //         .then((data) => setCards(data))
+    //         .catch((error) => console.error('Error fetching data:', error));
+    // }, []);
+
+    // const handleCardRef = (node) => {
+    //     if (observer.current) {
+    //         observer.current.disconnect();
+    //     }
+
+    //     if (node) {
+    //         observer.current.observe(node);
+    //     }
+    // };
     
 
     return (
@@ -94,6 +181,15 @@ const Meals = () => {
                     />
                 ))}
             </div>
+            {/* <div className="grid grid-cols-1 md:grid-cols-3 mx-auto gap-12 my-10 px-12 md:px-20 lg:px-24">
+                {cards.map((item, index) => (
+                    <div key={item._id} ref={index === cards.length - 1 ? handleCardRef : null}>
+                        <MenuCards items={item} />
+                    </div>
+                ))}
+            </div>
+            {loading && <p className="text-center">Loading...</p>}
+            {!loading && !hasMore && <p className="text-center">No more items to load.</p>} */}
         </div>
     );
 };

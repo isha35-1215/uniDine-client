@@ -7,7 +7,7 @@ const MyOrderRow = ({ order, refetch }) => {
     
 
     const handleDelete  =()=> {
-        console.log('called', `http://localhost:5000/cancel/${_id}`);
+        console.log('called', `https://uni-dine-server.vercel.app/cancel/${_id}`);
 
         Swal.fire({
             title: 'Are you sure?',
@@ -19,7 +19,7 @@ const MyOrderRow = ({ order, refetch }) => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/cancel/${_id}`, {
+                fetch(`https://uni-dine-server.vercel.app/cancel/${_id}`, {
                     method: "DELETE",
                 })
                     .then(res => res.json())

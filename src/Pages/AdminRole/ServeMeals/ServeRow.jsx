@@ -10,7 +10,7 @@ const ServeRow = ({ item, refetch }) => {
         console.log(_id);
         const status = 'delivered';
 
-        fetch(`http://localhost:5000/status/${_id}`, {
+        fetch(`https://uni-dine-server.vercel.app/status/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

@@ -10,7 +10,7 @@ const AllMealsRow = ({ item, refetch }) => {
     const [allLikes, setAllLikes] = useState([]);
     console.log(allLikes);
     useEffect(() => {
-        fetch(`http://localhost:5000/likes/${_id}`)
+        fetch(`https://uni-dine-server.vercel.app/likes/${_id}`)
             .then((res) => res.json())
             .then((data) => setAllLikes(data));
     }, [_id]);
@@ -20,7 +20,7 @@ const AllMealsRow = ({ item, refetch }) => {
     const [allReviews, setReviews] = useState([]);
     console.log(allReviews);
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews/${_id}`)
+        fetch(`https://uni-dine-server.vercel.app/reviews/${_id}`)
             .then((res) => res.json())
             .then((data) => setReviews(data));
     }, [_id]);
@@ -42,7 +42,7 @@ const AllMealsRow = ({ item, refetch }) => {
         const edited = { price,ingredients,admin, img, description,rating, category,time };
         console.log(edited);
 
-        fetch(`http://localhost:5000/upmeals/${_id}`, {
+        fetch(`https://uni-dine-server.vercel.app/upmeals/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -73,7 +73,7 @@ const AllMealsRow = ({ item, refetch }) => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/pop/${_id}`, {
+                fetch(`https://uni-dine-server.vercel.app/pop/${_id}`, {
                     method: "DELETE",
                 })
                     .then(res => res.json())
