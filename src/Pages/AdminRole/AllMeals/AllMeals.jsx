@@ -1,6 +1,7 @@
 import { useState } from "react";
 import AllMealsRow from "./AllMealsRow";
 import useMenu from "../../../hooks/useMenu";
+import { GrFormNextLink, GrFormPreviousLink } from "react-icons/gr";
 
 const AllMeals = () => {
   const [meals, refetch] = useMenu();
@@ -45,21 +46,22 @@ const AllMeals = () => {
 
       {/* Pagination Controls */}
       <div className="flex justify-center my-4">
-        <button
-          onClick={() => handlePageChange(currentPage - 1)}
-          disabled={currentPage === 1}
-          className="bg-orange-500 shadow-xl rounded-xl btn btn-warning text-white px-4 py-2 mx-2"
-        >
-          Previous
-        </button>
-        <button
-          onClick={() => handlePageChange(currentPage + 1)}
-          disabled={currentPage === totalPages}
-          className="bg-orange-500 shadow-xl rounded-xl btn btn-warning text-white px-4 py-2 mx-2"
-        >
-          Next
-        </button>
-      </div>
+                <GrFormPreviousLink
+                    className={`text-2xl ${currentPage === 1 ? 'text-gray-300 cursor-not-allowed' : 'text-orange-500 cursor-pointer'}`}
+                    onClick={() => handlePageChange(currentPage - 1)}
+                    style={{ pointerEvents: currentPage === 1 ? 'none' : 'auto' }}
+                />
+
+                <span className="mx-4">
+                    Page {currentPage} of {totalPages}
+                </span>
+
+                <GrFormNextLink
+                    className={`text-2xl ${currentPage === totalPages ? 'text-gray-300 cursor-not-allowed' : 'text-orange-500 cursor-pointer'}`}
+                    onClick={() => handlePageChange(currentPage + 1)}
+                    style={{ pointerEvents: currentPage === totalPages ? 'none' : 'auto' }}
+                />
+            </div>
     </div>
   );
 };

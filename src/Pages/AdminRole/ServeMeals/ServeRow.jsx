@@ -49,7 +49,7 @@ const ServeRow = ({ item, refetch }) => {
                 <th>
                     {
                         status == 'pending' ? 
-                        <button  className="bg-red-700 text-white text-base px-6 btn btn-ghost">{status}</button>
+                        <div className="text-lg  font-medium">{status}</div>
                         :   <div className="text-lg  font-medium">Delivered</div>
                     }
                 </th>

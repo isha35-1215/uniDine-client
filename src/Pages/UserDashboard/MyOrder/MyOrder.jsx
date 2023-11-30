@@ -1,6 +1,7 @@
 import { useState } from "react";
 import useOrder from "../../../hooks/useOrder";
 import MyOrderRow from "./MyOrderRow";
+import { GrFormNextLink, GrFormPreviousLink } from "react-icons/gr";
 
 const MyOrder = () => {
     const [orders, refetch] = useOrder();
@@ -45,20 +46,21 @@ const MyOrder = () => {
             </div>
             {/* Pagination Controls */}
             <div className="flex justify-center my-4">
-                <button
+                <GrFormPreviousLink
+                    className={`text-2xl ${currentPage === 1 ? 'text-gray-300 cursor-not-allowed' : 'text-orange-500 cursor-pointer'}`}
                     onClick={() => handlePageChange(currentPage - 1)}
-                    disabled={currentPage === 1}
-                    className="bg-orange-500 rounded-xl shadow-lg btn btn-warning text-white px-4 py-2 mx-2"
-                >
-                    Previous
-                </button>
-                <button
+                    style={{ pointerEvents: currentPage === 1 ? 'none' : 'auto' }}
+                />
+
+                <span className="mx-4">
+                    Page {currentPage} of {totalPages}
+                </span>
+
+                <GrFormNextLink
+                    className={`text-2xl ${currentPage === totalPages ? 'text-gray-300 cursor-not-allowed' : 'text-orange-500 cursor-pointer'}`}
                     onClick={() => handlePageChange(currentPage + 1)}
-                    disabled={currentPage === totalPages}
-                    className="bg-orange-500 rounded-xl shadow-lg btn btn-warning text-white px-4 py-2 mx-2"
-                >
-                    Next
-                </button>
+                    style={{ pointerEvents: currentPage === totalPages ? 'none' : 'auto' }}
+                />
             </div>
         </div>
     );

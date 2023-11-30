@@ -54,7 +54,14 @@ const MyOrderRow = ({ order, refetch }) => {
                     <div className="text-lg  font-medium">{status}</div>
                 </td>
                 <td>
-                    <button onClick={handleDelete} className="bg-red-700 text-white text-base px-6 btn btn-error">✕</button>
+                    {
+                        status=='delivered' ? 
+                        <div className="text-lg invisible font-medium">{status}</div>
+
+                        :
+                        <button onClick={handleDelete} className="bg-red-700 text-white text-base px-6 btn btn-error">✕</button>
+
+                    }
                 </td>
             </tr>
         </div>

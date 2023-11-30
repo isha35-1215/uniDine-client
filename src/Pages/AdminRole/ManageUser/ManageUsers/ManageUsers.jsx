@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import AllUsers from "../../../../hooks/AllUsers";
 import ManageRow from "../ManageUserRow/ManageRow";
+import { GrFormNextLink, GrFormPreviousLink } from "react-icons/gr";
 
 const ManageUsers = () => {
     const [users, refetch] = AllUsers();
@@ -21,27 +22,27 @@ const ManageUsers = () => {
         setCurrentPage(newPage);
     };
 
-    const [searchInput, setInput] = useState('');
+    // const [searchInput, setInput] = useState('');
 
-    useEffect(() => {
-        // Filter by search input
-        let filteredData = users.filter((user) =>
-            user.name.toLowerCase().includes(searchInput.toLowerCase()) ||
-            user.email.toLowerCase().includes(searchInput.toLowerCase())
-        );
+    // useEffect(() => {
+    //     // Filter by search input
+    //     let filteredData = users.filter((user) =>
+    //         user.name.toLowerCase().includes(searchInput.toLowerCase()) ||
+    //         user.email.toLowerCase().includes(searchInput.toLowerCase())
+    //     );
 
-        // Fetch isOne data for each user asynchronously
-        Promise.all(filteredData.map((user) =>
-            fetch(`https://uni-dine-server.vercel.app/isOne?email=${user.email}&name=${user.name}`)
-                .then((res) => res.json())
-        ))
-            .then((data) => setIsOne(data))
-            .catch((error) => console.error("Error fetching isOne data:", error));
+    //     // Fetch isOne data for each user asynchronously
+    //     Promise.all(filteredData.map((user) =>
+    //         fetch(`https://uni-dine-server.vercel.app/isOne?email=${user.email}&name=${user.name}`)
+    //             .then((res) => res.json())
+    //     ))
+    //         .then((data) => setIsOne(data))
+    //         .catch((error) => console.error("Error fetching isOne data:", error));
 
-        setCards(filteredData);
-    }, [searchInput, users]);
+    //     setCards(filteredData);
+    // }, [searchInput, users]);
 
-    console.log(cards);
+    // console.log(cards);
 
     return (
         <div>
@@ -51,8 +52,8 @@ const ManageUsers = () => {
                     type="text"
                     placeholder="Search by email and name..."
                     className="input input-bordered border-orange-500 rounded-r-none"
-                    value={searchInput}
-                    onChange={(e) => setInput(e.target.value)}
+                // value={searchInput}
+                // onChange={(e) => setInput(e.target.value)}
                 />
                 <button className="btn btn-secondary bg-orange-500 rounded-l-none">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -81,21 +82,23 @@ const ManageUsers = () => {
 
             {/* Pagination Controls */}
             <div className="flex justify-center my-4">
-                <button
+                <GrFormPreviousLink
+                    className={`text-2xl ${currentPage === 1 ? 'text-gray-300 cursor-not-allowed' : 'text-orange-500 cursor-pointer'}`}
                     onClick={() => handlePageChange(currentPage - 1)}
-                    disabled={currentPage === 1}
-                    className="bg-orange-500 rounded-xl shadow-lg btn btn-warning text-white px-4 py-2 mx-2"
-                >
-                    Previous
-                </button>
-                <button
+                    style={{ pointerEvents: currentPage === 1 ? 'none' : 'auto' }}
+                />
+
+                <span className="mx-4">
+                    Page {currentPage} of {totalPages}
+                </span>
+
+                <GrFormNextLink
+                    className={`text-2xl ${currentPage === totalPages ? 'text-gray-300 cursor-not-allowed' : 'text-orange-500 cursor-pointer'}`}
                     onClick={() => handlePageChange(currentPage + 1)}
-                    disabled={currentPage === totalPages}
-                    className="bg-orange-500 rounded-xl shadow-lg btn btn-warning text-white px-4 py-2 mx-2"
-                >
-                    Next
-                </button>
+                    style={{ pointerEvents: currentPage === totalPages ? 'none' : 'auto' }}
+                />
             </div>
+
         </div>
     );
 };

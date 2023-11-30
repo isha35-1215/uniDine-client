@@ -50,7 +50,7 @@ const MyProfile = () => {
                             {firstMember ? (
                                 <div>
                                     <img src={firstMember.img} className="w-56 rounded-lg" />
-                                    <h1 className="text-center text-xl font-semibold my-2">Membership: {firstMember.package}</h1>
+                                    <h1 className="text-center text-xl font-semibold my-2">Membership: {firstMember.badge}</h1>
                                 </div>
                             ) :
                                 <div>
@@ -63,10 +63,7 @@ const MyProfile = () => {
                 </div>
 
             </div>
-<div className="flex flex-row justify-center">
-<button onClick={handleSignOut} className='mt-6  btn btn-warning text-white text-lg bg-orange-500  normal-case'>Sign Out</button>
 
-</div>
         </div>
     );
 };

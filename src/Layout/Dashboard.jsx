@@ -1,10 +1,19 @@
 import { NavLink, Outlet } from "react-router-dom";
 import useAdmin from "../hooks/useAdmin";
+import { useContext } from "react";
+import { AuthContext } from "../Pages/Providers/AuthProvider/AuthProvider";
 
 const Dashboard = () => {
 
     const [isAdmin] = useAdmin();
     console.log(isAdmin);
+
+    const {logOut} = useContext(AuthContext);
+    const handleSignOut = () => {
+        logOut()
+            .then()
+            .catch()
+    }
 
     return (
         <div className="flex font-poppins">
@@ -35,6 +44,8 @@ const Dashboard = () => {
                     <div className="divider"></div>
                     <li><NavLink to={"/"}>Home</NavLink></li>
                     <li><NavLink to={"/meals"}>Meals</NavLink></li>
+                    <li><button onClick={handleSignOut}>logout</button></li>
+
                 </ul>
             </div>
             <div className="flex-1">
