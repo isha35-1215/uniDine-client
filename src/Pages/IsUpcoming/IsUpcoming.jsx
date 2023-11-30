@@ -1,16 +1,19 @@
-import { useEffect, useState } from "react";
 import UpcomingCard from "./UpcomingCard";
+import useUpcoming from "../../hooks/useupcoming";
 
 const IsUpcoming = () => {
 
-    const [allNew, setAllNew] = useState([]);
-    console.log(allNew);
+    const [allNew, refetch] = useUpcoming();
 
-    useEffect(() => {
-        fetch(`https://uni-dine-server.vercel.app/upcomings`)
-            .then((res) => res.json())
-            .then((data) => setAllNew(data));
-    }, []);
+
+    // const [allNew, setAllNew] = useState([]);
+    // console.log(allNew);
+
+    // useEffect(() => {
+    //     fetch(`https://uni-dine-server.vercel.app/upcomings`)
+    //         .then((res) => res.json())
+    //         .then((data) => setAllNew(data));
+    // }, []);
 
 
     return (
@@ -22,6 +25,7 @@ const IsUpcoming = () => {
                     <UpcomingCard
                         key={item._id}
                         items={item}
+                        refetch={refetch}
                     />
                 ))}
             </div>
