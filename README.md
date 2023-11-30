@@ -37,6 +37,11 @@ Implement search functionality based on meal title.
 Implement filter-by-category and filter-by-price-range options.
 
 
+**Upcoming Meals Page:**
+
+User can see al;l upcoming meals here. user can like any meals just once.
+
+
 **Checkout Page (/checkout, Private Route):**
 
 Display package details.
@@ -105,3 +110,9 @@ Display meal title, likes count, reviews count, distributor name, distributor em
 Show all requested meals by users in tabular form.
 Display meal title, email (who makes request), name (who makes request), status (pending/delivered), serve button.
 Implement serving meals by changing the status from pending to delivered.
+
+
+
+**Upcoming Meals Route:**
+
+admin can see the upcoming meals in a tabular form. admin can post any meals from this table if the like count is up to 10.
