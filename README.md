@@ -11,10 +11,13 @@ Currently, two official plugins are available:
 
 
 
+Unidine Hostel Management Project
+
+live link: https://unidine-2cdc8.web.app
 
 
 
-
+This is a university hostel management website. Foods are showed based on 3 category- breakfast, lunch, dinner. User have to be a member to make a meal request User have to purchase any package to be a member. 
 
 
 **Meal Details Page (/meal/:id):**
