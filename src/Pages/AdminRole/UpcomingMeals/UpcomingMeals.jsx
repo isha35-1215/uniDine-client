@@ -1,28 +1,32 @@
 import { useEffect, useState } from "react";
 import UpcomingRow from "./UpcomingRow";
 import { GrFormNextLink, GrFormPreviousLink } from "react-icons/gr";
+import useUpcoming from "../../../hooks/useupcoming";
 
 const UpcomingMeals = () => {
 
+    const [upcoming, refetch] = useUpcoming();
 
-    const [allNew, setAllNew] = useState([]);
-    console.log(allNew);
+    // const [allnew, setAllNew] = useState([]);
+    // console.log(allNew);
 
-    useEffect(() => {
-        fetch(`https://uni-dine-server.vercel.app/upcomings`)
-            .then((res) => res.json())
-            .then((data) => setAllNew(data));
-    }, []);
+    // useEffect(() => {
+    //     fetch(`https://uni-dine-server.vercel.app/upcomings`)
+    //         .then((res) => res.json())
+    //         .then((data) => setAllNew(data));
+    // }, []);
+
+
     const [currentPage, setCurrentPage] = useState(1);
     const itemsPerPage = 10;
 
     // Calculate the start and end indices for the current page
     const startIndex = (currentPage - 1) * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
-    const currentAllNew = allNew.slice(startIndex, endIndex);
+    const currentAllNew = upcoming.slice(startIndex, endIndex);
 
     // Calculate the total number of pages
-    const totalPages = Math.ceil(allNew.length / itemsPerPage);
+    const totalPages = Math.ceil(upcoming.length / itemsPerPage);
 
     const handlePageChange = (newPage) => {
         setCurrentPage(newPage);
@@ -35,7 +39,7 @@ const UpcomingMeals = () => {
 
     return (
         <div>
-            <h1 className="py-8 text-5xl text-center font-bold">Upcoming Items: {allNew.length}</h1>
+            <h1 className="py-8 text-5xl text-center font-bold">Upcoming Items: {upcoming.length}</h1>
             <div className="overflow-x-auto mx-6 table-container" style={{ minHeight: "400px" }}>
                 <table className="table">
                     {/* Head */}
@@ -49,7 +53,7 @@ const UpcomingMeals = () => {
                     </thead>
                     <tbody>
                         {currentAllNew.map((item) => (
-                            <UpcomingRow key={item._id} item={item} />
+                            <UpcomingRow key={item._id} item={item} refetch={refetch} />
                         ))}
                     </tbody>
                 </table>

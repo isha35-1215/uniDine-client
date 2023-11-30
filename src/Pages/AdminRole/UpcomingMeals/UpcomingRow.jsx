@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import swal from "sweetalert";
 
-const UpcomingRow = ({ item }) => {
+const UpcomingRow = ({ item, refetch }) => {
     const { _id, title, img, time, like, review, category, price, description, ingredients, admin, email, rating } = item;
 
     const mealInfo = { title, img, time, like, review, category, price, description, ingredients, admin, email, rating };
@@ -18,6 +18,7 @@ const UpcomingRow = ({ item }) => {
             body: JSON.stringify(mealInfo),
         }).then(() => {
             swal("Congrats!", "Meal Added Successfully!", "success");
+            refetch();
         });
     }
 
