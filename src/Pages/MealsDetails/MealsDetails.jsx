@@ -4,6 +4,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Providers/AuthProvider/AuthProvider";
 import swal from "sweetalert";
 import useLike from "../../hooks/useLike";
+import IsMember from "../../hooks/IsMember";
 
 
 const MealsDetails = () => {
@@ -118,15 +119,16 @@ const MealsDetails = () => {
 
 
     //check is member / package holder
-    const [isMember, setIsMember] = useState(null);
+    const [isMember, refetch] = IsMember();
+    // const [isMember, setIsMember] = useState(null);
 
-    useEffect(() => {
-        fetch(`https://uni-dine-server.vercel.app/payment?email=${email}`)
-            .then((res) => res.json())
-            .then((data) => setIsMember(data));
-    }, [email]);
+    // useEffect(() => {
+    //     fetch(`https://uni-dine-server.vercel.app/payment?email=${email}`)
+    //         .then((res) => res.json())
+    //         .then((data) => setIsMember(data));
+    // }, [email]);
 
-    console.log(isMember);
+    // console.log(isMember);
 
     //handle meal request condition
     const likeCount = allLikes.length;
@@ -139,6 +141,7 @@ const MealsDetails = () => {
         }
         else if (!isMember) {
             swal("You aren't package holder", "Purchase package to eat!", "error");
+            refetch();
         }
         else {
             fetch("https://uni-dine-server.vercel.app/orders", {
