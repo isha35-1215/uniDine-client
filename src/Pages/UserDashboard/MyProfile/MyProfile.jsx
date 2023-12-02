@@ -10,6 +10,8 @@ const MyProfile = () => {
             .catch()
     }
 
+
+
     const [isMember, setIsMember] = useState([]);
     console.log(isMember);
 

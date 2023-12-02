@@ -46,9 +46,9 @@ const MenuCards = ({ items }) => {
                         }
                     })}
                 </div>
-                <div className="card-actions">
+                <div className="card-actions flex flex-row justify-center">
                     <Link to={`/meal/${items._id}`} >
-                        <button className="btn btn-warning w-80 md:w-36 lg:w-80 text-base text-white bg-orange-500 border-orange-400 normal-case">View Details</button>
+                        <button className="btn btn-warning w-64 md:w-36 lg:w-80 text-base text-white bg-orange-500 border-orange-400 normal-case">View Details</button>
                     </Link>
                 </div>
             </div>

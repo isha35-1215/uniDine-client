@@ -14,7 +14,6 @@ const Home = () => {
             <Menu></Menu>
             <Membership></Membership>
             <PopularFood></PopularFood>
-            <h2>this is home</h2>
         </div>
     );
 };

@@ -161,7 +161,7 @@ const MealsDetails = () => {
 
     return (
         <div>
-            <div className="max-w-full mx-auto rounded-md bg-cover bg-center">
+            <div className="max-w-full mx-auto px-4 rounded-md bg-cover bg-center">
                 <img src={img} alt={title} className="w-full max-h-[450px] bg-cover" />
                 <div className="max-w-6xl mx-auto my-10">
                     <h1 className="text-3xl font-bold my-2">Item: {title}</h1>
