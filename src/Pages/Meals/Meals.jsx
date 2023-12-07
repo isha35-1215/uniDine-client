@@ -129,8 +129,8 @@ const Meals = () => {
             <Helmet>
                 <title>UniDine | Meals</title>
             </Helmet>
-            <h1 className="text-center text-3xl lg:text-4xl font-bold text-orange-600 mt-4">UniDine Culinary Haven</h1>
-            <p className="text-center text-lg lg:text-xl text-orange-500 m-4">Savor Every Moment with Our Exquisite Meal Collection</p>
+            <h1 className="text-center text-3xl lg:text-4xl font-bold mt-4">UniDine Culinary Haven</h1>
+            <p className="text-center text-lg lg:text-xl m-4">Savor Every Moment with Our Exquisite Meal Collection</p>
                 <div className="input-group flex w-72 mx-auto my-2">
                     <input
                         type="text"
@@ -173,7 +173,7 @@ const Meals = () => {
                 </select>
                 </div>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 mx-auto gap-12 my-10 px-12 md:px-20 lg:px-24">
+            <div className="grid grid-cols-1 md:grid-cols-3 mx-auto gap-8 my-10 px-12 md:px-20 lg:px-24">
                 {cards.map((item) => (
                     <MenuCards
                         key={item._id}

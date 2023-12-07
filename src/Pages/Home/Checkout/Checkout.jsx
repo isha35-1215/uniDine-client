@@ -17,9 +17,9 @@ const Checkout = () => {
                 packageInfo.map((item) => (
                     <div key={item.id} className="card card-compact w-96 h-[320px] bg-base-100 ">
                         <figure><img className='h-5/6 w-1/2' src={item.img} alt="" /></figure>
-                        <div className="card-body text-center">
-                            <h2 className="card-title text-lg font-medium">Item: {item.name}</h2>
-                            <h2 className="card-title text-lg font-medium">Price: <span className="text-orange-500">${item.price}</span></h2>
+                        <div className="card-body text-center items-center ">
+                            <h2 className="card-title text-lg font-semibold">Item: {item.name}</h2>
+                            <h2 className="card-title text-lg font-semibold">Price: <span className="text-orange-500">${item.price}</span></h2>
 
                             <div className="mt-4">
                                 <Elements stripe={stripePromise}>

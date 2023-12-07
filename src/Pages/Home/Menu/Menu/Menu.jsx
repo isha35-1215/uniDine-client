@@ -19,7 +19,7 @@ const Menu = () => {
     const totalPageCount = Math.ceil(menu.length / itemsPerPage);
 
     const renderMenuCards = (items) => (
-        <div className="grid grid-cols-1 md:grid-cols-3 mx-auto gap-12 my-10 px-12 md:px-20 lg:px-24">
+        <div className="grid grid-cols-1 md:grid-cols-3 mx-auto gap-8 my-10 px-12 md:px-20 lg:px-24">
             {items.map((item) => (
                 <MenuCards key={item._id} items={item} />
             ))}
@@ -39,9 +39,9 @@ const Menu = () => {
 
 
     return (
-        <div>
-            <h1 className='text-center text-3xl lg:text-4xl font-bold  mt-4'>Your Daily Delights</h1>
-            <h6 className="text-center text-lg lg:text-xl  m-4">Choose Your Culinary Adventure</h6>
+        <div className='mt-16'>
+            <h1 className='text-center text-3xl lg:text-4xl font-bold'>Your Daily Delights</h1>
+            <h6 className="text-center text-lg lg:text-xl  m-4">Choose Your Culinary Adventure!</h6>
             <Tabs>
                 <TabList className='text-center border-b-2 border-b-orange-500'>
                     <Tab>All Meals</Tab>
@@ -71,7 +71,7 @@ const Menu = () => {
 
                 </TabPanel>
                 <TabPanel>
-                    <div className="grid grid-cols-1 md:grid-cols-3 mx-auto gap-12 my-10 px-12 md:px-20 lg:px-24">
+                    <div className="grid grid-cols-1 md:grid-cols-3 mx-auto gap-8 my-10 px-12 md:px-20 lg:px-24">
                         {breakfast.map((items) => (
                             <MenuCards
                                 key={items._id}
@@ -81,7 +81,7 @@ const Menu = () => {
                     </div>
                 </TabPanel>
                 <TabPanel>
-                    <div className="grid grid-cols-1 md:grid-cols-3 mx-auto gap-12 my-10 px-12 md:px-20 lg:px-24">
+                    <div className="grid grid-cols-1 md:grid-cols-3 mx-auto gap-8 my-10 px-12 md:px-20 lg:px-24">
                         {lunch.map((items) => (
                             <MenuCards
                                 key={items._id}
@@ -91,7 +91,7 @@ const Menu = () => {
                     </div>
                 </TabPanel>
                 <TabPanel>
-                    <div className="grid grid-cols-1 md:grid-cols-3 mx-auto gap-12 my-10 px-12 md:px-20 lg:px-24">
+                    <div className="grid grid-cols-1 md:grid-cols-3 mx-auto gap-8 my-10 px-12 md:px-20 lg:px-24">
                         {dinner.map((items) => (
                             <MenuCards
                                 key={items._id}

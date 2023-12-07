@@ -1,4 +1,4 @@
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useContext, useEffect, useState } from "react";
@@ -68,9 +68,9 @@ const UpcomingCard = ({ items }) => {
         <div data-aos="zoom-in" key={items.id} className="card card-compact  h-[390px] bg-base-100 shadow-xl border-orange-500 border-[1px]">
             <figure><img className='h-[200px] w-full' src={items.img} alt="" /></figure>
             <div className="card-body">
-                <h2 className="card-title text-lg font-medium">Item: {title}</h2>
-                <h2 className="card-title text-lg font-medium">Category: {category}</h2>
-                <h2 className="card-title text-lg font-medium">Price: <span className="text-orange-500">${price}</span></h2>
+                <h2 className="card-title text-lg font-semibold">Item: {title}</h2>
+                <h2 className="card-title text-lg font-semibold">Category: {category}</h2>
+                <h2 className="card-title text-lg font-semibold">Price: <span className="text-orange-500">${price}</span></h2>
                 <div className="flex justify-between mx-4">
                     <div className="flex justify-center">
                         {/* <span className="card-title text-lg font-medium">Rating: </span> */}
