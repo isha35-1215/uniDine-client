@@ -70,7 +70,7 @@ const UpcomingCard = ({ items }) => {
             <div className="card-body">
                 <h2 className="card-title text-lg font-medium">Item: {title}</h2>
                 <h2 className="card-title text-lg font-medium">Category: {category}</h2>
-                <h2 className="card-title text-lg font-medium">Price: {price}</h2>
+                <h2 className="card-title text-lg font-medium">Price: <span className="text-orange-500">${price}</span></h2>
                 <div className="flex justify-between mx-4">
                     <div className="flex justify-center">
                         {/* <span className="card-title text-lg font-medium">Rating: </span> */}

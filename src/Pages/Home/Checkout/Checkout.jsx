@@ -19,7 +19,7 @@ const Checkout = () => {
                         <figure><img className='h-5/6 w-1/2' src={item.img} alt="" /></figure>
                         <div className="card-body text-center">
                             <h2 className="card-title text-lg font-medium">Item: {item.name}</h2>
-                            <h2 className="card-title text-lg font-medium">Price: <span className="text-orange-500">{item.price}</span></h2>
+                            <h2 className="card-title text-lg font-medium">Price: <span className="text-orange-500">${item.price}</span></h2>
 
                             <div className="mt-4">
                                 <Elements stripe={stripePromise}>

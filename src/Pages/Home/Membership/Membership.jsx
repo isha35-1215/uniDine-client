@@ -24,7 +24,7 @@ const Membership = () => {
                         <figure><img className='h-5/6 w-1/2' src={member.img} alt="" /></figure>
                         <div className="card-body text-center">
                             <h2 className="card-title text-lg font-medium">Item: {member.name}</h2>
-                            <h2 className="card-title text-lg font-medium">Price: <span className="text-orange-500">{member.price}</span></h2>
+                            <h2 className="card-title text-lg font-medium">Price: <span className="text-orange-500">${member.price}</span></h2>
 
                             <div className="card-actions flex flex-row justify-center">
                                 <Link to={`/checkout/${member.name}`} >

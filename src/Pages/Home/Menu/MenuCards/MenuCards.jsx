@@ -18,7 +18,7 @@ const MenuCards = ({ items }) => {
             <figure><img className='h-[200px] w-full' src={items.img} alt="" /></figure>
             <div className="card-body">
                 <h2 className="card-title text-lg font-medium">Item: {items.title}</h2>
-                <h2 className="card-title text-lg font-medium">Price: <span className="text-orange-500">{items.price}</span></h2>
+                <h2 className="card-title text-lg font-medium">Price: <span className="text-orange-500">${items.price}</span></h2>
                 <div className="flex justify-center">
                     {/* <span className="card-title text-lg font-medium">Rating: </span> */}
                     {Array.from({ length: 5 }).map((_, index) => {
