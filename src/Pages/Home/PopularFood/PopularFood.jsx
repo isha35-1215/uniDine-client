@@ -1,12 +1,19 @@
 import { Link } from "react-router-dom";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from "react";
 
 const PopularFood = () => {
+    useEffect(() => {
+        AOS.init();
+    }, [])
+
     return (
-        <div className="my-16">
+        <div  className="my-16">
             <h1 className=' text-center text-3xl lg:text-4xl font-bold  mt-4'>Our Popular Items</h1>
             <h6 className="text-center text-lg lg:text-xl m-4">Explore The Charm of Our Most Loved Dishes!</h6>
-            <div className="grid grid-cols-1 md:grid-cols-3 mx-auto gap-8 my-10 px-12 md:px-20 lg:px-24">
-                <div className="card card-compact h-[380px] md:h-[340px] lg:h-[390px] bg-base-100 shadow-xl border-orange-500 border-[1px]">
+            <div  className="grid grid-cols-1 md:grid-cols-3 mx-auto gap-8 my-10 px-12 md:px-20 lg:px-24">
+                <div data-aos="zoom-in" className="card card-compact h-[380px] md:h-[340px] lg:h-[390px] bg-base-100 shadow-xl border-orange-500 border-[1px]">
                     <figure>
                         <img src="https://i.ibb.co/LnBXHB5/authentic-italian-pasta.jpg"/>
                     </figure>
@@ -33,7 +40,7 @@ const PopularFood = () => {
                         </div>
                     </div>
                 </div>
-                <div className="card card-compact h-[380px] md:h-[340px] lg:h-[390px] bg-base-100 shadow-xl border-orange-500 border-[1px]">
+                <div data-aos="zoom-in" className="card card-compact h-[380px] md:h-[340px] lg:h-[390px] bg-base-100 shadow-xl border-orange-500 border-[1px]">
                     <figure>
                         <img src="https://i.ibb.co/RPK6pJs/fresh-sandwich-cutting-board-with-healthy-tomatoes-generative-ai.jpg" />
                     </figure>
@@ -60,7 +67,7 @@ const PopularFood = () => {
                         </div>
                     </div>
                 </div>
-                <div className="card card-compact h-[380px] md:h-[340px] lg:h-[390px] bg-base-100 shadow-xl border-orange-500 border-[1px]">
+                <div data-aos="zoom-in" className="card card-compact h-[380px] md:h-[340px] lg:h-[390px] bg-base-100 shadow-xl border-orange-500 border-[1px]">
                     <figure>
                         <img src="https://i.ibb.co/1TZxmr3/turkish-breakfast-shakshuka-olives-cheese-fruit-rich-brunch.jpg" />
                     </figure>
