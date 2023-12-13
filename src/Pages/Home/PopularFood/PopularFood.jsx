@@ -9,7 +9,7 @@ const PopularFood = () => {
     }, [])
 
     return (
-        <div  className="my-16">
+        <div className="my-16">
             <h1 className=' text-center text-3xl lg:text-4xl font-bold  mt-4'>Our Popular Items</h1>
             <h6 className="text-center text-lg lg:text-xl m-4">Explore The Charm of Our Most Loved Dishes!</h6>
             <div  className="grid grid-cols-1 md:grid-cols-3 mx-auto gap-8 my-10 px-12 md:px-20 lg:px-24">
