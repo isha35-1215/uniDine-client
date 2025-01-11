@@ -97,7 +97,7 @@ const ReviewCard = ({ item, refetch }) => {
                                 <button className="btn btn-sm btn-circle btn-ghost text-orange-600 font-extrabold text-2xl absolute right-6 top-6">✕</button>
                             </form>
                             <form onSubmit={handleSubmit}>
-                                <div className="form-control ">
+                                <div className="form-control">
                                     <label className="label">
                                         <span className="label-text">Edit Review</span>
                                     </label>

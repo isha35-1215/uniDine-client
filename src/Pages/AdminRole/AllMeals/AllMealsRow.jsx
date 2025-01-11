@@ -1,9 +1,13 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import swal from "sweetalert";
 import Swal from "sweetalert2";
+import { AuthContext } from "../../Providers/AuthProvider/AuthProvider";
 
 const AllMealsRow = ({ item, refetch }) => {
+
+    const { user } = useContext(AuthContext);
+    const Email = user?.email;
 
     const { _id, title, admin, price, email, img, description, ingredients, time, rating, category } = item;
 
@@ -16,7 +20,16 @@ const AllMealsRow = ({ item, refetch }) => {
     }, [_id]);
     console.log(allLikes?.length);
 
+    const [matchEmail, setMatchEmail] = useState([]);
+    console.log(matchEmail);
+    useEffect(() => {
+        fetch(`https://uni-dine-server.vercel.app/meal/${_id}`)
+            .then((res) => res.json())
+            .then((data) => setMatchEmail(data));
+    }, [_id]);
+    console.log(matchEmail?.length);
 
+    
     const [allReviews, setReviews] = useState([]);
     console.log(allReviews);
     useEffect(() => {
@@ -52,11 +65,18 @@ const AllMealsRow = ({ item, refetch }) => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                if (data.modifiedCount > 0) {
-                    swal("Success", "Meal Data is Updated Successfully", "success");
-                    document.getElementById(`my-modal-${_id}`).close();
-                    refetch();
+                if(email == Email){
+                    if (data.modifiedCount > 0) {
+                        swal("Success", "Meal Data is Updated Successfully", "success");
+                        document.getElementById(`my-modal-${_id}`).close();
+                        refetch();
+                    }
                 }
+                else{
+                    swal("Oops", "You don't have edit access!!", "error");
+
+                }
+
             })
     }
 

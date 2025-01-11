@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import UpcomingRow from "./UpcomingRow";
 import { GrFormNextLink, GrFormPreviousLink } from "react-icons/gr";
 import useUpcoming from "../../../hooks/useupcoming";

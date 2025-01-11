@@ -21,7 +21,7 @@ const AdminProfile = () => {
     return (
         <div className="mt-10">
             <h1 className='py-10 text-4xl text-center font-bold'>My Profile</h1>
-                <div className="flex flex-row gap-20 mx-48 my-10">
+                <div className="flex flex-row gap-16 mx-32 my-10">
                     <div>
                         <img src={user?.photoURL} className="w-72 rounded-lg shadow-2xl" />
                     </div>

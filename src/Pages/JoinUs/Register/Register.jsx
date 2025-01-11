@@ -5,7 +5,6 @@ import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { Helmet } from "react-helmet-async";
 import useAxiosPublic from "../../../hooks/useAxiosPublic";
-import Swal from "sweetalert2";
 
 const Register = () => {
     const axiosPublic = useAxiosPublic();

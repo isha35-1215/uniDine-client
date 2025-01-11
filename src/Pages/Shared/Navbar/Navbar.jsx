@@ -59,7 +59,7 @@ const Navbar = () => {
                         </ul>
                     </div>
                     <a className="btn btn-ghost normal-case invisible lg:visible  text-orange-600  text-3xl font-bold">
-                        <img className='w-[40px] h-[40px] rounded-full' src="https://i.ibb.co/6BqRzGh/food-3745531.png" alt="icon1" border="0" />UniDine</a>
+                        <img className='w-[40px] h-[40px] rounded-full' src="https://i.ibb.co/6BqRzGh/food-3745531.png" alt="icon1" border="0" />DashDine</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">

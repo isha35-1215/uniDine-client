@@ -15,7 +15,7 @@ const Banner = () => {
         <div className="hero-overlay bg-opacity-20"></div>
         <div className="hero-content text-center lg:text-right">
             <div className="lg:min-w-[1100px]">
-                <h1 className="text-5xl text-black font-bold">UniDine:</h1>
+                <h1 className="text-5xl text-black font-bold">DashDine:</h1>
                 <h1 className="text-5xl my-4 text-black font-bold">Streamlining Hostel Life</h1>
                 <p className="my-2 text-black text-xl lg:text-2xl font-medium">Elevate Campus Living with our Hostel Management System–</p>
                 <p className="mb-4 text-black text-xl lg:text-2xl font-medium">Where Delicious Meals and Convenience Unite!</p>

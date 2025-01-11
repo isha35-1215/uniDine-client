@@ -69,7 +69,6 @@ const Menu = () => {
         </div>
     );
 
-
     const handleBreakfastChange = (selectedPage) => {
         setCurrentPage(selectedPage);
     };

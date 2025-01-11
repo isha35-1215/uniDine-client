@@ -1,4 +1,3 @@
-// import useCart from "../../../hooks/useCart";
 
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import { useContext, useEffect, useState } from "react";

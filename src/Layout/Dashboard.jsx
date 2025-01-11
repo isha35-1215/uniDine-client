@@ -20,7 +20,7 @@ const Dashboard = () => {
 
             <div className="w-64 min-h-screen bg-orange-500">
                 <ul className="menu text-xl bg-inherit text-white font-semibold">
-                    <a className="btn btn-ghost normal-case invisible lg:visible  my-4  text-3xl font-bold">
+                    <a className="btn btn-ghost normal-case invisible lg:visible my-4 text-3xl font-bold">
                         <img className='w-[40px] h-[40px] rounded-full' src="https://i.ibb.co/6BqRzGh/food-3745531.png" alt="icon1" border="0" />UniDine</a>
                     {
                         isAdmin ?
