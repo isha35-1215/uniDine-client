@@ -55,6 +55,8 @@ const AllMealsRow = ({ item, refetch }) => {
         const edited = { price,ingredients,admin, img, description,rating, category,time };
         console.log(edited);
 
+        if(email == Email){
+
         fetch(`https://uni-dine-server.vercel.app/upmeals/${_id}`, {
             method: 'PUT',
             headers: {
@@ -65,19 +67,19 @@ const AllMealsRow = ({ item, refetch }) => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                if(email == Email){
                     if (data.modifiedCount > 0) {
                         swal("Success", "Meal Data is Updated Successfully", "success");
                         document.getElementById(`my-modal-${_id}`).close();
                         refetch();
                     }
-                }
-                else{
-                    swal("Oops", "You don't have edit access!!", "error");
-
-                }
+                
 
             })
+        }
+        else{
+            swal("Oops", "You don't have edit access!!", "error");
+
+        }
     }
 
 
