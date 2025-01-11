@@ -78,7 +78,8 @@ const AllMealsRow = ({ item, refetch }) => {
         }
         else{
             swal("Oops", "You don't have edit access!!", "error");
-
+            document.getElementById(`my-modal-${_id}`).close();
+                        refetch();
         }
     }
 
